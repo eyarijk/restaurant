@@ -15,4 +15,9 @@ class Table extends Model
     {
         return $this->hasMany('App\Order');
     }
+
+    public function getPrice()
+    {
+        return $this->reserve_price / 100;
+    }
 }

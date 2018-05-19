@@ -14,27 +14,27 @@
                 <div class="card m-b-10">
                     <header class="card-header">
                         <p class="card-header-title">
-                           {{ $order->customer->getFullName() }} (Стол: {{ $order->table->name }} - на {{ $order->table->person_size }} людей)
+                            <a href="{{ route('owner.orders.show',$order->id) }}">{{ $order->customer->getFullName() }} (Стол: {{ $order->table->number }} - на {{ $order->table->person_size }} людей)</a>
                         </p>
                     </header>
                     <div class="card-content">
                         <div class="content">
                             {{ $order->note }}
                             <br>
-                            <time>Час: </time>
+                            <time>Час: {{ $order->time }}</time>
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <form name="status-{{ $order->id }}" action="/admin/posts/status" method="post">
+                        <form name="status-{{ $order->id }}" action="{{ route('owner.orders.status') }}" method="post">
                             {{csrf_field()}}
-                            <input type="hidden" name="id" value="">
+                            <input type="hidden" name="id" value="{{ $order->id }}">
                         </form>
                         <a onclick="forms['status-{{ $order->id }}'].submit();" class="card-footer-item"><i class="fa fa-trash m-r-5" aria-hidden="true"></i><span>Стіл вільний</span></a>
                     </footer>
                 </div>
             @endforeach
         @else
-
+            <p>Немає замовлень!</p>
         @endif
 
     </div>

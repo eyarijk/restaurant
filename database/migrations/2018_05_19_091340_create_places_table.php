@@ -19,6 +19,7 @@ class CreatePlacesTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->text('description');
+            $table->string('slug');
             $table->string('logo')->nullable();
             $table->timestamps();
         });

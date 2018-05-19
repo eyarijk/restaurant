@@ -20,7 +20,6 @@ class CreateTablesTable extends Migration
             $table->text('description')->nullable();
             $table->integer('reserve_price')->nullable();
             $table->integer('place_id')->unsigned();
-            $table->string('slug');
             $table->boolean('is_reserved')->default(false);
             $table->timestamps();
         });
