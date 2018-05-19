@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="body-grad">
         <div class="container">
             <a href="{{ route('home') }}">
