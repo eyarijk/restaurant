@@ -26,4 +26,5 @@ Route::get('place/{id}', 'Api\PlaceController@getPlaceById')->name('api_get_plac
 # ------------------
 # Tables API Methods
 # ------------------
-Route::get('tables/{place_id}', 'Api\TableController@getPlaceById')->name('api_get_tables_by_place_id');
+Route::get('tables/{place_id}', 'Api\TableController@getTablesByPlaceId')->name('api_get_tables_by_place_id');
+Route::get('table/{table}', 'Api\TableController@checkTableAvailability')->name('api_get_table_availability');

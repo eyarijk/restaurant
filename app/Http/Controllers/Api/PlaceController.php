@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Api\BaseController as BaseController;
 use App\Place;
 
 
-class PlaceController extends BaseController
+class PlaceController
 {
     /**
      * @return \Illuminate\Http\JsonResponse
@@ -16,7 +14,7 @@ class PlaceController extends BaseController
     {
         $places = Place::all();
 
-        return $this->sendResponse($places->toArray(), 'Places list retrieved successfully.');
+        return response()->json($places->toArray());
     }
 
     /**
@@ -27,6 +25,6 @@ class PlaceController extends BaseController
     {
         $place = Place::find($id);
 
-        return $this->sendResponse($place, 'Single place retrieved successfully.');
+        return response()->json($place);
     }
 }
