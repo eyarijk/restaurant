@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Customer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Table;
@@ -45,5 +46,4 @@ class TableController
 
         return response()->json(false);
     }
-
 }

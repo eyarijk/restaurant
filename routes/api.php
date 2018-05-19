@@ -28,3 +28,13 @@ Route::get('place/{id}', 'Api\PlaceController@getPlaceById')->name('api_get_plac
 # ------------------
 Route::get('tables/{place_id}', 'Api\TableController@getTablesByPlaceId')->name('api_get_tables_by_place_id');
 Route::get('table/{table}', 'Api\TableController@checkTableAvailability')->name('api_get_table_availability');
+
+# ------------------
+# Orders API Methods
+# ------------------
+Route::post('reservation', 'Api\OrderController@createTableReservation')->name('create_table_reservation');
+
+# ------------------
+# Menus API Methods
+# ------------------
+Route::get('menus/{place}', 'Api\MenuController@menus')->name('api_get_place_menus');
