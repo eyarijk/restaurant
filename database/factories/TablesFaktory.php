@@ -9,5 +9,6 @@ $factory->define(App\Table::class, function (Faker $faker) {
         'description' => $faker->text,
         'reserve_price' => $faker->numberBetween(1000, 5000),
         'is_reserved' => $faker->numberBetween(0, 1),
+        'place_id' => 5,
     ];
 });
