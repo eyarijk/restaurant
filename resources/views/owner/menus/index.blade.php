@@ -6,6 +6,7 @@
         <div class="columns m-t-10">
             <div class="column">
                 <h1 class="title">Меню ресторана</h1>
+                <a class="button is-primary" href="{{ route('owner.menus.create') }}">Створити меню</a>
             </div>
         </div>
         <hr class="m-t-0">

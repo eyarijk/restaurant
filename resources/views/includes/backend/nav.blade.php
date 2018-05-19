@@ -7,6 +7,12 @@
             <li><a href="{{ route('owner.index') }}">Головна</a></li>
         </ul>
         <ul class="menu-list">
+            <li><a href="{{ route('owner.places.index') }}">Місця</a></li>
+        </ul>
+        <ul class="menu-list">
+            <li><a href="{{ route('owner.tables.index') }}">Столи</a></li>
+        </ul>
+        <ul class="menu-list">
             <li><a href="{{ route('owner.orders.index') }}">Резерв столів</a></li>
         </ul>
         <ul class="menu-list">

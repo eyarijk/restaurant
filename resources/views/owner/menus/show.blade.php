@@ -28,10 +28,10 @@
                     </div>
                 </form>
             @endforeach
-            <a href="{{ route('owner.product.create',$menu->id) }}" class="button is-primary">Додати продукти</a>
+
         @else
             <p>Немає продуктів!</p>
         @endif
-
+        <a href="{{ route('owner.product.create',$menu->id) }}" class="button is-primary">Додати продукти</a>
     </div>
 @endsection

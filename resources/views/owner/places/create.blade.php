@@ -5,15 +5,14 @@
     <div class="flex-container">
         <div class="columns m-t-10">
             <div class="column">
-                <h1 class="title">Створити продукт в меню: {{ $menu->title }}</h1>
+                <h1 class="title">Створити місце</h1>
             </div>
         </div>
         <hr class="m-t-0">
         <div class="column is-three-fifths">
-            <form action="{{ route('owner.product.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('owner.places.store') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('put') }}
-                <input type="hidden" name="menu_id" value="{{ $menu->id }}">
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
                         <label class="label">Назва</label>
@@ -22,6 +21,30 @@
                         <div class="field">
                             <div class="control">
                                 <input class="input" name="name" type="text" placeholder="Назва">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Телефон</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" name="phone" type="text" placeholder="+380128811872">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Адреса</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" name="address" type="text" placeholder="Адреса">
                             </div>
                         </div>
                     </div>
@@ -38,28 +61,17 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                        <label class="label">Ціна в грн.</label>
-                    </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <div class="control">
-                                <input class="input" name="price" type="text" placeholder="100 грн">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">Фото</label>
+                        <label class="label">Logo/Photo</label>
                     </div>
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
                                 <div class="file">
                                     <label class="file-label">
-                                        <input class="file-input" type="file" name="image">
+                                        <input class="file-input" type="file" name="logo">
                                         <span class="file-cta">
                                              <span class="file-icon">
                                                 <i class="fas fa-upload"></i>
@@ -88,5 +100,5 @@
             </form>
         </div>
     </div>
-        @endsection
+@endsection
 
