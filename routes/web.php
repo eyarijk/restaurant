@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/backend','Owner\BackendController@index')->name('owner.index');
+
+Route::get('/backend/orders','Owner\OrderController@index')->name('owner.orders.index');

@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->text('note')->nullable();
             $table->integer('total_price');
             $table->string('payment');
+            $table->boolean('is_finished')->default(false);
             $table->dateTime('time');
             $table->timestamps();
         });

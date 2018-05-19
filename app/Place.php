@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Place extends Model
 {
-    public function hall()
+    public function table()
     {
-        return $this->hasMany('App\Hall');
+        return $this->hasMany('App\Table');
     }
 
     public function menu()

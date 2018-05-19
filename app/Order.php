@@ -8,7 +8,7 @@ class Order extends Model
 {
     public function table()
     {
-        return $this->belongsTo('App\Place');
+        return $this->belongsTo('App\Table');
     }
 
     public function customer()

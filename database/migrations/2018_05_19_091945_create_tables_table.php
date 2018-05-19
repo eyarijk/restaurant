@@ -16,9 +16,10 @@ class CreateTablesTable extends Migration
         Schema::create('tables', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('person_size');
-            $table->string('name')->nullable();
+            $table->integer('number')->nullable();
             $table->text('description')->nullable();
             $table->integer('reserve_price')->nullable();
+            $table->integer('place_id')->unsigned();
             $table->string('slug');
             $table->boolean('is_reserved')->default(false);
             $table->timestamps();

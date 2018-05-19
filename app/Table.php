@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Table extends Model
 {
-    public function hall()
+    public function place()
     {
-        return $this->belongsTo('App\Hall');
+        return $this->belongsTo('App\Place');
+    }
+
+    public function order()
+    {
+        return $this->hasMany('App\Order');
     }
 }
