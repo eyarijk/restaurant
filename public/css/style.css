@@ -1,0 +1,130 @@
+body {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+50,eff3f7+50 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(left, #ffffff 50%, #eff3f7 50%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #ffffff 50%,#eff3f7 50%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #ffffff 50%,#eff3f7 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eff3f7',GradientType=1 ); /* IE6-9 */
+}
+
+img {
+	width: 100%;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.card {
+	background-color: white;
+}
+.card-body {
+	background-color: white;
+	padding: 10px 15px 15px;
+}
+.logo {
+	position: absolute;
+	top: 10px;
+	width: 159px;
+	height: 20px;
+}
+
+.best{ 
+	position: relative;
+	left: -30px;
+	margin: 0 0 25px;
+}
+
+
+.item {
+	width: 50%;
+	padding: 0;
+	border: 1px solid #eff3f7;
+	transition: all 0.2s ease;
+}
+
+.item:hover {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5)
+}
+
+.title {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  text-align: left;
+  
+}
+
+.title h1 {
+	display: block;
+}
+
+.description {
+	flex-flow: column wrap;
+}
+.item img {
+	height: 170px;
+}
+
+.products .row {
+	margin-left: 25px;
+}
+
+.padding-top {
+	padding-top: 70px;
+}
+
+.card-title {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.margin-bottom {
+	margin-bottom: 20px;
+}
+
+.input-container {
+	padding-top: 10px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.input-wrapper {
+	width: 100%;
+	position: relative;
+}
+
+.input-wrapper input {
+	position: absolute;
+	right: -250px;
+}
+
+.input-wrapper input.open {
+	position: absolute;
+	right: 22px;
+	top: -3px;
+}
+
+.input-wrapper .icon-container {
+	position: absolute;
+	top: 2px;
+	right: 0;
+}
+
+.top-section {
+	margin-top: 30px;
+}
+
+.title b {
+	font-weight: 900;
+}
+
+.title h1 {
+	font-weight: 300;
+	font-size: 72px;
+}

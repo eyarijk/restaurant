@@ -20,4 +20,9 @@ class Place extends Model
     {
         return $this->hasMany('App\Order');
     }
+
+    public function getImagePath()
+    {
+        return '/images/places/' . $this->logo;
+    }
 }

@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/backend','Owner\BackendController@index')->name('owner.index');
 
 // Orders
@@ -55,3 +51,7 @@ Route::get('/backend/tables','Owner\TablesController@index')->name('owner.tables
 Route::get('/backend/tables/create','Owner\TablesController@create')->name('owner.tables.create');
 
 Route::put('/backend/tables/store/','Owner\TablesController@store')->name('owner.tables.store');
+
+Route::get('/','HomeController@index')->name('home');
+
+Route::get('/places','HomeController@places')->name('places');
