@@ -18,9 +18,13 @@ class HomeController extends Controller
         $best = Place::limit(4)->get();
         $top = Place::limit(4)->get();
         $all = Place::limit(4)->get();
-
-
         return view('site.places',compact('best','top','all'));
+    }
+
+    public function place($slug)
+    {
+        $place = Place::where('slug',$slug)->first();
+        return view('site.place',compact('place'));
     }
 
 }

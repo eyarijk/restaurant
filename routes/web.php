@@ -52,6 +52,9 @@ Route::get('/backend/tables/create','Owner\TablesController@create')->name('owne
 
 Route::put('/backend/tables/store/','Owner\TablesController@store')->name('owner.tables.store');
 
+// Site
 Route::get('/','HomeController@index')->name('home');
 
 Route::get('/places','HomeController@places')->name('places');
+
+Route::get('/place/{slug}','HomeController@place')->name('place.show');
