@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" id="app">
         <div class="logo">
             <img src="{{ 'logo.svg' }}">
         </div>
@@ -33,9 +33,6 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div>
-                    <div class="row">
-
                     </div>
                 </div>
             </div>
