@@ -20,4 +20,14 @@ class Order extends Model
     {
         return $this->belongsTo('App\Place');
     }
+
+    public function products()
+    {
+        return $this->belongsToMany('App\Product', 'order_product');
+    }
+
+    public function getPrice()
+    {
+        return $this->total_price / 100;
+    }
 }

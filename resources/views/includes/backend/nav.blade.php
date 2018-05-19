@@ -4,10 +4,13 @@
             General
         </p>
         <ul class="menu-list">
-            <li><a>Главная</a></li>
+            <li><a href="{{ route('owner.index') }}">Головна</a></li>
         </ul>
         <ul class="menu-list">
-            <li><a>Резерв столів</a></li>
+            <li><a href="{{ route('owner.orders.index') }}">Резерв столів</a></li>
+        </ul>
+        <ul class="menu-list">
+            <li><a href="{{ route('owner.menus.index') }}">Меню ресторана</a></li>
         </ul>
     </aside>
 </div>
