@@ -13,3 +13,6 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+// mix.js('node_modules/material-datetime-picker/dist/material-datetime-picker.js', 'public/js/material-datetime-picker.js')
+//     .css('node_modules/material-datetime-picker/dist/material-datetime-picker.css', 'public/css/material-datetime-picker.css');
+// mix.copy('node_modules/material-datetime-picker/dist/material-datetime-picker.js', 'public/js/material-datetime-picker.js');
