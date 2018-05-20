@@ -28,12 +28,11 @@
                     <div class="products">
                         <div class="products-wrap margin-bottom">
                             @foreach($first as $value)
-                                {{--<div class="col-md-6" style="">--}}
                                 <div class="card item">
                                     <img class="card-img-top" src="{{ public_path($value->getImagePath()) }}"
                                          alt="{{ $value->name }}">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ $value->name }}</h5>
+                                        <a href="{{ route('place.show',$value->slug) }}" class="card-title">{{ $value->name }}</a>
                                         <div class="fav-block">
                                             <div class="rating-block">
                                                 <i class="fas fa-star"></i>
@@ -48,11 +47,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{--</div>--}}
                             @endforeach
                         </div>
                         <div class="arrow">
-                            <a href=""><img class="arrow-wrap" src="{{  asset('img/arrow.svg') }}" alt=""></a>
+                            <a href="{{ route('places') }}"><img class="arrow-wrap" src="{{  asset('img/arrow.svg') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="soc-icons">

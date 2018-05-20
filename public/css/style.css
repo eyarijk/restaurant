@@ -1,10 +1,10 @@
 .body-grad {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+50,eff3f7+50 */
-background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(left, #ffffff 50%, #eff3f7 50%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, #ffffff 50%,#eff3f7 50%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, #ffffff 50%,#eff3f7 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eff3f7',GradientType=1 ); /* IE6-9 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+50,eff3f7+50 */
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(left, #ffffff 50%, #eff3f7 50%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #ffffff 50%,#eff3f7 50%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #ffffff 50%,#eff3f7 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eff3f7',GradientType=1 ); /* IE6-9 */
 }
 
 img {
@@ -55,14 +55,14 @@ ul, li {
 }
 
 .title {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  text-align: left;
-  
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 100vh; /* These two lines are counted as one :-)       */
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	text-align: left;
+
 }
 
 .title h1 {
@@ -107,14 +107,14 @@ ul, li {
 }
 
 /*.input-wrapper input {*/
-	/*position: absolute;*/
-	/*right: -250px;*/
+/*position: absolute;*/
+/*right: -250px;*/
 /*}*/
 
 /*.input-wrapper input.open {*/
-	/*position: absolute;*/
-	/*right: 22px;*/
-	/*top: -3px;*/
+/*position: absolute;*/
+/*right: 22px;*/
+/*top: -3px;*/
 /*}*/
 
 .input-wrapper .icon-container {
@@ -206,5 +206,110 @@ ul, li {
 }
 
 .desc-block .text-wrap h1 {
+	font-size: 100px;
+	font-weight: 700;
+}
 
+.desc-block .text-wrap h3 {
+	font-size: 16px;
+}
+
+.step-book ul {
+	display: flex;
+	position: absolute;
+	top: 0;
+}
+
+.book-wrap, .step-book li {
+	transform: rotate(180deg);
+	writing-mode: vertical-rl;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	margin-right: 25px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.book-wrap {
+	flex-direction: column;
+}
+
+.book-wrap, .step1, .step2, .step3 {
+	transform: rotate(180deg);
+	display: block;
+}
+
+.book-wrap {
+	display: flex;
+	align-items: flex-end;
+}
+
+/*.book-wrap input {*/
+/*display: none;*/
+/*}*/
+
+.step1 {
+	background: url("../img/table.svg") no-repeat center;
+	width: 60px;
+	height: 45px;
+}
+
+.step2 {
+	background: url("../img/fork.svg") no-repeat center;
+	width: 25px;
+	height: 45px;
+}
+
+.step3 {
+	background: url("../img/mans.svg") no-repeat center;
+	width: 35px;
+	height: 45px;
+}
+
+[for="date"]:before {
+	content: '';
+	background: url("../img/date.svg") no-repeat center;
+	width: 35px;
+	height: 45px;
+	display: block;
+	transform: rotate(180deg);
+}
+
+label {
+	position: relative;
+	font-weight: inherit;
+}
+
+.next-step {
+	display: flex;
+	justify-content: flex-end;
+	border-bottom: 1px solid;
+	width: 40px;
+	float: right;
+	text-decoration: none;
+	color: #333;
+}
+
+.next-step:hover {
+	text-decoration: none;
+	color: #333;
+}
+
+.step2-block .text-wrap {
+	max-width: 260px;
+	display: inline-block;
+}
+
+.step2-block .text-wrap h3 {
+	font-size: 52px;
+	font-weight: 700;
+}
+
+.menu-wrap {
+	display: inline-block;
+}
+
+#map {
+	height: 200px;
 }

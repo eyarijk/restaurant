@@ -20,8 +20,6 @@
 
     {{-- Preload --}}
     <style>
-        body{background:#ECF0F1}
-
         .load{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
             /*change these sizes to fit into your project*/
             width:100px;
@@ -88,5 +86,8 @@
         },
         700);
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUbe76zHqb2aJbvF2c-6vCt9GpPYSCmW4&callback=initMap"
+            async defer></script>
+    @include('includes.map')
 </body>
 </html>
