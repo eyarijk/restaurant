@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="body-grad">
+    <div class="body-grad" id="app">
         <div class="container">
             <a href="{{ route('home') }}">
                 <div class="logo">
@@ -30,7 +30,7 @@
                             @foreach($first as $value)
                                 {{--<div class="col-md-6" style="">--}}
                                 <div class="card item">
-                                    <img class="card-img-top" src="{{ url($value->getImagePath()) }}"
+                                    <img class="card-img-top" src="{{ public_path($value->getImagePath()) }}"
                                          alt="{{ $value->name }}">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $value->name }}</h5>
@@ -58,7 +58,15 @@
                     <div class="soc-icons">
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook-f"></i>facebook</a></li>
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i>google+</a></li>
+                            <li>
+                                <a href="#">
+                                    {{--
+                                        todo: Example call for create open event for DateTimePicker
+                                    --}}
+                                    <i class="fab fa-google-plus-g" @click="openPicker"></i>
+                                    google+
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

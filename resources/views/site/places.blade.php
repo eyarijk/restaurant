@@ -67,7 +67,7 @@
             <div class="container">
                 <h2>ВСІ РЕСТОРАНИ</h2>
                 <ul class="products-list">
-                    @foreach($top as $item)
+                    @foreach($all as $item)
                         <li class="col-md-3">
                             <div class="card item">
                                 <img class="card-img-top" src="{{ url($item->getImagePath()) }}" alt="{{ $item->name }}">

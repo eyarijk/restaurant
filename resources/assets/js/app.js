@@ -16,8 +16,18 @@ window.MaterialDatetimePicker = require('material-datetime-picker');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import MaterialDateTimePicker from 'material-datetime-picker';
+
+let date = null;
+let time = null;
+let formattedDateTime = null;
+
 const picker = new MaterialDateTimePicker()
-    .on('submit', (val) => console.log(`data: ${val}`))
+    .on('submit', (val) => {
+        date = val.format('YYYY-MM-DD');
+        time = val.format('hh:mm');
+        formattedDateTime = date+' '+time+':00';
+        console.log(`date: ${date} time: ${time} formatted: ${formattedDateTime}`);
+    })
     .on('open', () => console.log('opened'))
     .on('close', () => console.log('closed'));
 
