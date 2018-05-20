@@ -34,11 +34,20 @@ const picker = new MaterialDateTimePicker()
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+//Rotate fix
+/*$("input").each(function() {
+    var $this = $(this),
+        child = $this.children(":first");
+    $this.css("minHeight", function() {
+        return child[0].getBoundingClientRect()
+    });
+});*/
+
 const app = new Vue({
     el: '#app',
     data:{
         table_id: null,
-        place_id: document.getElementById('placeID').value,
+        place_id: document.getElementById('placeID') ? document.getElementById('placeID').value : null,
         activeStep: 0,
         person_size: 4,
         products: [],

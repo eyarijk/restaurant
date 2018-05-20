@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Список категорій
+@endsection
+
 @section('content')
 
     <div class="container">
@@ -34,9 +38,6 @@
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </div>
-                                        <div class="like-block">
-                                            <span><i class="far fa-heart"></i></span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +56,7 @@
                                 <img class="card-img-top" src="{{ url($item->getImagePath()) }}" alt="{{ $item->name }}">
                                 <div class="card-body">
                                     <a href="{{ route('place.show',$item->slug) }}" class="card-title">{{ $item->name }}</a>
-                                    <p>{{ $item->description }}</p>
+                                    <p style="height: 142px;overflow: hidden;">{{ str_limit($item->description,245) }}</p>
                                 </div>
                             </div>
                         </li>

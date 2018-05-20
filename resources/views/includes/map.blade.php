@@ -1,3 +1,5 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUbe76zHqb2aJbvF2c-6vCt9GpPYSCmW4&callback=initMap"
+        async defer></script>
 <script>
     function initMap () {
 // Styles a map in night mode.

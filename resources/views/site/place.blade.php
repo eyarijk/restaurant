@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $place->name }}
+@endsection
+
 @section('content')
 
     <div class="container vh-10">
@@ -19,11 +23,8 @@
         <div class="col-md-5">
             <div class="desc-block">
                 <div class="text-wrap">
-                    <h1>Hello Burger</h1>
-                    <h3>Ми, в Hello Burgers свято віримо в те, що кожна людина та її смаки - це унікальне творіння.
-                        Тому, ми
-                        створюємо наші бургери враховуючи індивідуальні особливості кожного та будуємо наш сервіс таким
-                        чином - щоб вам було комфортно насолоджуватись смачними та неперевершеними бургерами.</h3>
+                    <h1>{{ $place->name }}</h1>
+                    <h3 style="text-align: justify">{{ $place->description }}</h3>
                 </div>
             </div>
         </div>
@@ -53,25 +54,25 @@
                 <a class="next-step" @click="nextStep()" href="#">далі</a>
             </div>
         </div>
-        <div class="col-md-5" v-show="checkStep(1)">
-            <h2>Забронюй</h2>
+        <div class="col-md-5 col-wrapper" v-show="checkStep(1)">
+            <h2 class="order">Забронюй</h2>
             <div class="book">
-                <div class="book-wrap">
-                    <label for="date">
-                        <input v-model="date" id="date" type="text">
-                    </label>
-                    <label for="time">
-                        <input v-model="time" id="time" type="text">
-                    </label>
-                    <label for="persons">
-                        <input name="10" v-model="person_size" id="persons" type="text">
-                    </label>
+                <div class="book-wrap inputs-container book-wrapper">
+                        <label for="date">
+                            <input v-model="date" id="date" type="text">
+                        </label>
+                        <label for="time">
+                            <input v-model="time" id="time" type="text">
+                        </label>
+                        <label for="persons">
+                            <input name="10" v-model="person_size" id="persons" type="text">
+                        </label>
                 </div>
                 <a class="next-step" @click="nextStep()" href="#">далі</a>
             </div>
         </div>
         <div class="col-md-5" v-show="checkStep(2)">
-            <h2>Забронюй</h2>
+            <h2 class="order">Забронюй</h2>
             <div class="book">
                 <div class="book-wrap">
                     <label for="date">
@@ -87,8 +88,8 @@
                 <a class="next-step" @click="nextStep()" href="#">далі</a>
             </div>
         </div>
-        <div class="col-md-5" v-show="checkStep(3)">
-            <h2>Забронюй</h2>
+        <div class="col-md-5 col-col-wr" v-show="checkStep(3)">
+            <h2 class="order">Забронюй</h2>
             <div class="step2-block">
                 <div class="text-wrap">
                     <h3>Замов оператив</h3>
@@ -115,7 +116,7 @@
             </div>
         </div>
         <div class="col-md-5" v-show="checkStep(4)">
-            <h2>Забронюй</h2>
+            <h2 class="order">Забронюй</h2>
             <div class="step2-block">
                 <div class="text-wrap">
                     <h3>ВІТАЄМО :)</h3>
@@ -133,12 +134,14 @@
             <div class="step-book height-100">
                 <div id="map" class="height-100"></div>
                 <ul>
-                    <li @click="setStep(1)"><i class="step1"></i>Крок 1</li>
-                    <li @click="setStep(2)"><i class="step2"></i>Крок 2</li>
-                    <li @click="setStep(3)"><i class="step3"></i>Крок 3</li>
+                    <li @click="setStep(1)"><i class="step step1"></i>Крок 1</li>
+                    <li @click="setStep(2)"><i class="step step2"></i>Крок 2</li>
+                    <li @click="setStep(3)"><i class="step step3"></i>Крок 3</li>
                 </ul>
             </div>
         </div>
     </div>
     <input id="placeID" type="hidden" value="{{ $place->id }}" v-model="place_id">
 @endsection
+
+@include('includes.map')

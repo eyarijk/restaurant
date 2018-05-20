@@ -7,10 +7,6 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eff3f7',GradientType=1 ); /* IE6-9 */
 }
 
-body, html {
-	overflow: hidden;
-}
-
 img {
 	width: 100%;
 }
@@ -237,6 +233,7 @@ ul, li {
 	align-items: center;
 	margin-right: 25px;
 	font-weight: 600;
+	font-size: 25px;
 	text-transform: uppercase;
 }
 
@@ -254,9 +251,19 @@ ul, li {
 	align-items: flex-end;
 }
 
+.book-wrap.inputs-container label {
+	transform: rotate(90deg);
+	transform-origin: 0 0;
+	flex-direction: column;
+}
+
 /*.book-wrap input {*/
 /*display: none;*/
 /*}*/
+
+.step {
+	margin-top: 20px;
+}
 
 .step1 {
 	background: url("../img/table.svg") no-repeat center;
@@ -308,7 +315,7 @@ ul, li {
 
 .book-wrap label {
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: row-reverse !important;
 	font-weight: 600;
 	font-size: 24px;
 	margin-left: 50px;
@@ -356,7 +363,7 @@ label {
 #map {
 	position: absolute;
 	top: 0;
-	width: calc(100% - 30px);
+	width: 100%;
 }
 
 .row.padding-left {
@@ -377,4 +384,113 @@ label {
 
 .height-100 {
 	height: 100%;
+}
+
+.rotate-input-container {
+	transform: rotate(90deg);
+}
+
+.book-wrapper .next-step {
+	position: absolute;
+	right: 0;
+	bottom: -230px;
+}
+
+.book-wrapper {
+	text-align: justify;
+	position: relative;
+	left: -20px;
+}
+
+.book-wrapper:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+}
+
+.book-wrapper > label {
+	display: inline-block;
+	width: 0;
+	margin-left: 90px;
+}
+
+
+.book-wrapper [for="date"]:before {
+	content: '';
+	background: url("../img/date.svg") no-repeat center;
+	width: 35px;
+	height: 45px;
+	display: block;
+	transform: rotate(90deg);
+}
+
+.book-wrapper [for="time"]:before {
+	content: '';
+	background: url("../img/clock.svg") no-repeat center;
+	width: 35px;
+	height: 45px;
+	display: block;
+	transform: rotate(90deg);
+	margin-top: 20px;
+}
+
+.book-wrapper [for="persons"]:before {
+	content: '';
+	background: url("../img/user.svg") no-repeat center;
+	width: 35px;
+	height: 45px;
+	display: block;
+	transform: rotate(90deg);
+	margin-top: 20px;
+}
+
+
+.book-wrapper > label > * {
+	display: inline-block;
+	white-space: nowrap;
+	margin-top: 21px;
+	/*transform: translate(0,100%) rotate(-90deg);*/
+	transform-origin: 0 0;
+	max-width: 150px;
+	vertical-align: bottom;
+	margin-right: 28px;
+	border: 0;
+	text-align: right;
+}
+
+.book-wrapper > label > *:before {
+	content: "";
+	float: left;
+	margin-top: 100%;
+}
+
+.col-wrapper .book {
+	margin-top: -63px;
+}
+
+.padding-left > .col-md-7 {
+	margin: 0;
+	padding: 0;
+}
+
+.col-wrapper .next-step {
+	position: absolute;
+	right: 20px;
+	bottom: -220px;
+}
+
+.col-col-wr .next-step {
+	position: absolute;
+	right: 20px;
+}
+
+a {
+	color: #000;
+}
+a:hover {
+	color: #000;
+}
+
+.input-wrapper .open {
+	opacity: 0;
 }

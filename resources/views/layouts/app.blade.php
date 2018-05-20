@@ -7,7 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Панель управління</title>
+    <title>@yield('title')</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -86,8 +86,7 @@
         },
         700);
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUbe76zHqb2aJbvF2c-6vCt9GpPYSCmW4&callback=initMap"
-            async defer></script>
-    @include('includes.map')
+
+
 </body>
 </html>

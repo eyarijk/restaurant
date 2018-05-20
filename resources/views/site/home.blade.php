@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Головна
+@endsection
+
 @section('content')
 
     <div class="body-grad" id="app">
@@ -12,9 +16,9 @@
             <div class="row">
                 <div class="col-md-6 description">
                     <div class="title">
-                        <h1><b>З НАМИ</b></h1>
-                        <h1>Зручно</h1>
-                        <h1>Вчасно</h1>
+                        <h1><b>ОБИРАЙ ТА</b></h1>
+                        <h1><b>БРОНЮЙ</b></h1>
+                        <h1>СВОЄ МІСЦЕ</h1>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -29,7 +33,7 @@
                         <div class="products-wrap margin-bottom">
                             @foreach($first as $value)
                                 <div class="card item">
-                                    <img class="card-img-top" src="{{ public_path($value->getImagePath()) }}"
+                                    <img class="card-img-top" src="{{ url($value->getImagePath()) }}"
                                          alt="{{ $value->name }}">
                                     <div class="card-body">
                                         <a href="{{ route('place.show',$value->slug) }}" class="card-title">{{ $value->name }}</a>
@@ -40,9 +44,6 @@
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
-                                            </div>
-                                            <div class="like-block">
-                                                <span><i class="far fa-heart"></i></span>
                                             </div>
                                         </div>
                                     </div>
