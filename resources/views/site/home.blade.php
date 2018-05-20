@@ -4,11 +4,11 @@
 
     <div class="body-grad" id="app">
         <div class="container">
-            <a href="{{ route('home') }}">
-                <div class="logo">
+            <div class="logo">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('img/logo.svg') }}">
-                </div>
-            </a>
+                </a>
+            </div>
             <div class="row">
                 <div class="col-md-6 description">
                     <div class="title">

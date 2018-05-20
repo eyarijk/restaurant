@@ -4,11 +4,11 @@
 
     <div class="container">
         <div>
-            <a href="{{ route('home') }}">
-                <div class="logo">
+            <div class="logo">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('img/logo.svg') }}">
-                </div>
-            </a>
+                </a>
+            </div>
             <div class="input-container">
                 <div class="input-wrapper">
                     <input type="text" class="input open" />

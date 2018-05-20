@@ -28,6 +28,6 @@
         </div>
     </div>
     <div class="col-md-7">
-        Test
+        <span @click="checkTable">Test</span>
     </div>
 @endsection
