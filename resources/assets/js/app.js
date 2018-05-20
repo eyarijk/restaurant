@@ -41,11 +41,17 @@ const app = new Vue({
             table_id: 1,
             activeStep: 1,
             person_size: 4,
-            phone: null,
             products: [],
             time: '21:00:00',
             date: '2018-05-19',
             order: {},
+            customer: {
+                customer: {
+                    first_name: 'Undefined',
+                    last_name: 'Undefined',
+                    phone: null
+                }
+            }
         }
     },
     methods: {
@@ -75,7 +81,15 @@ const app = new Vue({
                }
            };
         },
+        saveCustomer: function () {
+            this.$http.post('/api/create/customer', this.customer).then(function(response) {
+                console.log(response)
+            }, function (error) {
+                console.log(error);
+            });
+        },
         saveOrder: function () {
+           this.saveCustomer();
            this.formatData();
            console.log(this.order);
             this.$http.post('/api/reservation', this.order).then(function(response) {
