@@ -44,3 +44,8 @@ Route::post('reservation', 'Api\OrderController@createTableReservation')->name('
 # Menus API Methods
 # ------------------
 Route::get('menus/{place}', 'Api\MenuController@menus')->name('api_get_place_menus');
+
+# --------------------
+# QR-codes API Methods
+# --------------------
+Route::get('new/qr/barcode', 'Api\QRCodeController@qr')->name('api_get_qr_code');
