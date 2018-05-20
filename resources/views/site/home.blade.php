@@ -3,6 +3,20 @@
 @section('content')
 
     <div class="body-grad" id="app">
+        <div class="navbar">
+            <div id="nav-button">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+            </div>
+        </div>
+        <div class="nav-block">
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" class="input open" />
+                    <span class="icon-container"><i class="fas fa-search"></i></span>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="logo">
                 <a href="{{ route('home') }}">
