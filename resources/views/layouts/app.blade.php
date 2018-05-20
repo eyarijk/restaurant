@@ -19,7 +19,9 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    @yield('content')
+    <div id="app">
+        @yield('content')
+    </div>
     <!-- Scripts -->
     @yield('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rome/2.1.22/rome.js"></script>
