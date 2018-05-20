@@ -36,23 +36,23 @@ const picker = new MaterialDateTimePicker()
 
 const app = new Vue({
     el: '#app',
-    data: function () {
-        return {
-            table_id: 1,
-            activeStep: 1,
-            person_size: 4,
-            products: [],
-            time: '21:00:00',
-            date: '2018-05-19',
-            order: {},
+    data:{
+        table_id: null,
+        place_id: document.getElementById('placeID').value,
+        activeStep: 0,
+        person_size: 4,
+        products: [],
+        time: '21:00:00',
+        date: '2018-05-19',
+        order: {},
+        customer: {
             customer: {
-                customer: {
-                    first_name: 'Undefined',
-                    last_name: 'Undefined',
-                    phone: null
-                }
+                first_name: 'Undefined',
+                last_name: 'Undefined',
+                phone: null
             }
         }
+
     },
     methods: {
         openPicker: function () {
@@ -61,11 +61,26 @@ const app = new Vue({
         formatDate: function () {
             return this.date + ' '+ this.time;
         },
+        setStep: function (step) {
+            this.activeStep = step;
+        },
         checkStep: function (step) {
-            this.activeStep === step;
+            if (this.activeStep == step)
+                return true;
+            return false;
         },
         formatQuery: function () {
            return '?time=' + this.formatDate() + '&person_size=' + this.person_size;
+        },
+        getPersons: function () {
+          return this.person_size + ' ПЕРСОНИ';
+        },
+        getTable: function () {
+            this.$http.get('/api/places/list').then(function(response){
+               console.log(response);
+            }, function(error){
+                console.log(error);
+            });
         },
         formatData: function () {
            this.order = {
@@ -80,6 +95,9 @@ const app = new Vue({
                    place_id: 5
                }
            };
+        },
+        nextStep: function () {
+           this.activeStep = this.activeStep + 1;
         },
         saveCustomer: function () {
             this.$http.post('/api/create/customer', this.customer).then(function(response) {

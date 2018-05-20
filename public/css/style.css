@@ -216,6 +216,8 @@ ul, li {
 
 .step-book ul {
 	display: flex;
+	position: absolute;
+	top: 0;
 }
 
 .book-wrap, .step-book li {
@@ -306,4 +308,8 @@ label {
 
 .menu-wrap {
 	display: inline-block;
+}
+
+#map {
+	height: 200px;
 }
