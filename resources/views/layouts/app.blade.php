@@ -86,7 +86,7 @@
             document.getElementById('preloader').style.display = 'none';
             $('.blured-wrapper').attr('class', 'wrapper');
         },
-        2000);
+        700);
     </script>
 </body>
 </html>
