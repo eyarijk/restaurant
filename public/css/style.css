@@ -7,6 +7,10 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eff3f7',GradientType=1 ); /* IE6-9 */
 }
 
+body, html {
+	overflow: hidden;
+}
+
 img {
 	width: 100%;
 }
@@ -214,10 +218,15 @@ ul, li {
 	font-size: 16px;
 }
 
+.step-book {
+	padding-top: 100px;
+}
+
 .step-book ul {
 	display: flex;
-	position: absolute;
 	top: 0;
+	margin-left: 80px;
+	cursor: pointer;
 }
 
 .book-wrap, .step-book li {
@@ -274,6 +283,40 @@ ul, li {
 	height: 45px;
 	display: block;
 	transform: rotate(180deg);
+	margin-top: 20px;
+}
+
+[for="time"]:before {
+	content: '';
+	background: url("../img/clock.svg") no-repeat center;
+	width: 35px;
+	height: 45px;
+	display: block;
+	transform: rotate(180deg);
+	margin-top: 20px;
+}
+
+[for="persons"]:before {
+	content: '';
+	background: url("../img/user.svg") no-repeat center;
+	width: 35px;
+	height: 45px;
+	display: block;
+	transform: rotate(180deg);
+	margin-top: 20px;
+}
+
+.book-wrap label {
+	display: flex;
+	flex-direction: row-reverse;
+	font-weight: 600;
+	font-size: 24px;
+	margin-left: 50px;
+}
+
+h2.order {
+	font-weight: 600;
+	margin: 0 0 70px 0;
 }
 
 label {
@@ -311,5 +354,27 @@ label {
 }
 
 #map {
-	height: 200px;
+	position: absolute;
+	top: 0;
+	width: calc(100% - 30px);
+}
+
+.row.padding-left {
+	padding-left: 150px;
+}
+
+.vh-10 {
+	height: 10vh;
+}
+
+.vh-50 {
+	height: 50vh;
+}
+
+.vh-40 {
+	height: 40vh;
+}
+
+.height-100 {
+	height: 100%;
 }

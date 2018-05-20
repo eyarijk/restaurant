@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container vh-10">
         <div class="logo">
             <a href="{{ route('home') }}">
                 <img src="{{ asset('img/logo.svg') }}">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row padding-left vh-50">
         <div class="col-md-5">
             <div class="desc-block">
                 <div class="text-wrap">
@@ -35,9 +35,9 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row padding-left vh-40">
         <div class="col-md-5" v-show="checkStep(0)">
-            <h2>Забронюй</h2>
+            <h2 class="order">Забронюй</h2>
             <div class="book">
                 <div class="book-wrap">
                     <label for="date">
@@ -129,9 +129,9 @@
                 <a class="next-step" @click="nextStep()" href="#">далі</a>
             </div>
         </div>
-        <div class="col-md-7">
-            <div class="step-book">
-                <div id="map"></div>
+        <div class="col-md-7 height-100">
+            <div class="step-book height-100">
+                <div id="map" class="height-100"></div>
                 <ul>
                     <li @click="setStep(1)"><i class="step1"></i>Крок 1</li>
                     <li @click="setStep(2)"><i class="step2"></i>Крок 2</li>
@@ -139,10 +139,6 @@
                 </ul>
             </div>
         </div>
-    </div>
-
-    <div class="col-md-7">
-        <span @click="checkTable">Test</span>
     </div>
     <input id="placeID" type="hidden" value="{{ $place->id }}" v-model="place_id">
 @endsection
