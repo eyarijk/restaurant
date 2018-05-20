@@ -25,7 +25,7 @@
                             <div class="card item">
                                 <img class="card-img-top" src="{{ url($item->getImagePath()) }}" alt="{{ $item->name }}">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $item->name }}</h5>
+                                    <a href="{{ route('place.show',$item->slug) }}" class="card-title">{{ $item->name }}</a>
                                     <div class="fav-block">
                                         <div class="rating-block">
                                             <i class="fas fa-star"></i>
@@ -54,7 +54,7 @@
                             <div class="card item">
                                 <img class="card-img-top" src="{{ url($item->getImagePath()) }}" alt="{{ $item->name }}">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $item->name }}</h5>
+                                    <a href="{{ route('place.show',$item->slug) }}" class="card-title">{{ $item->name }}</a>
                                     <p>{{ $item->description }}</p>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                             <div class="card item">
                                 <img class="card-img-top" src="{{ url($item->getImagePath()) }}" alt="{{ $item->name }}">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $item->name }}</h5>
+                                    <a href="{{ route('place.show',$item->slug) }}" class="card-title">{{ $item->name }}</a>
                                 </div>
                             </div>
                         </li>
