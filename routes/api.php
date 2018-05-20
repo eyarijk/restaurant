@@ -33,6 +33,7 @@ Route::get('place/{id}', 'Api\PlaceController@getPlaceById')->name('api_get_plac
 # ------------------
 Route::get('tables/{place_id}', 'Api\TableController@getTablesByPlaceId')->name('api_get_tables_by_place_id');
 Route::get('table/{table}', 'Api\TableController@checkTableAvailability')->name('api_get_table_availability');
+Route::get('table/find/{place}', 'Api\TableController@getOneFreeTableByPlace')->name('api_get_one_free_table_by_query');
 
 # ------------------
 # Orders API Methods

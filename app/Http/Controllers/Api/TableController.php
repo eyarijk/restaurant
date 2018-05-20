@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Customer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Table;
 use App\Order;
+use App\Place;
 
 class TableController
 {
@@ -19,6 +19,31 @@ class TableController
         $tables = Table::where('place_id', $place_id)->get();
 
         return response()->json($tables->toArray());
+    }
+
+    /**
+     * @param Place $place
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getOneFreeTableByPlace(Place $place, Request $request)
+    {
+        $data = $request->all();
+
+        if (!array_key_exists('time', $data) || !array_key_exists('person_size', $data)) {
+            $exception = new \Exception('Invalid data');
+
+            return response()->json(['error' => $exception->getMessage()], 400);
+        }
+
+        $dateTime = $request->get('time');
+
+        $filtered = Table::with('order')->where('place_id', $place->id)
+            ->where('person_size', $data['person_size'])
+            ->where('is_busy', false)
+            ->first();
+
+        return response()->json($filtered->toArray());
     }
 
     /**

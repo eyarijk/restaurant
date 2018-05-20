@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Table;
 use Illuminate\Http\Request;
 use App\Order;
 
@@ -17,7 +18,12 @@ class OrderController
         $data = $request->json()->all();
         $order = Order::create($data['order']);
 
-        return response()->json($order);
-    }
+        $table = Table::where('id', $data['order']['table_id'])
+            ->update(['is_busy' => true]);
 
+        return response()->json([
+            'order' => $order,
+            'table_id' => $table
+        ]);
+    }
 }
