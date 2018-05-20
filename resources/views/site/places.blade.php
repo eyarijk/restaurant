@@ -4,11 +4,11 @@
 
     <div class="container">
         <div>
-            <a href="{{ route('home') }}">
-                <div class="logo">
+            <div class="logo">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('img/logo.svg') }}">
-                </div>
-            </a>
+                </a>
+            </div>
             <div class="input-container">
                 <div class="input-wrapper">
                     <input type="text" class="input open" />
@@ -25,7 +25,7 @@
                             <div class="card item">
                                 <img class="card-img-top" src="{{ url($item->getImagePath()) }}" alt="{{ $item->name }}">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $item->name }}</h5>
+                                    <a href="{{ route('place.show',$item->slug) }}" class="card-title">{{ $item->name }}</a>
                                     <div class="fav-block">
                                         <div class="rating-block">
                                             <i class="fas fa-star"></i>
@@ -54,7 +54,7 @@
                             <div class="card item">
                                 <img class="card-img-top" src="{{ url($item->getImagePath()) }}" alt="{{ $item->name }}">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $item->name }}</h5>
+                                    <a href="{{ route('place.show',$item->slug) }}" class="card-title">{{ $item->name }}</a>
                                     <p>{{ $item->description }}</p>
                                 </div>
                             </div>
@@ -67,12 +67,12 @@
             <div class="container">
                 <h2>ВСІ РЕСТОРАНИ</h2>
                 <ul class="products-list">
-                    @foreach($top as $item)
+                    @foreach($all as $item)
                         <li class="col-md-3">
                             <div class="card item">
                                 <img class="card-img-top" src="{{ url($item->getImagePath()) }}" alt="{{ $item->name }}">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $item->name }}</h5>
+                                    <a href="{{ route('place.show',$item->slug) }}" class="card-title">{{ $item->name }}</a>
                                 </div>
                             </div>
                         </li>

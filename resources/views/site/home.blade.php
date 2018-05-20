@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <div class="body-grad">
+    <div class="body-grad" id="app">
         <div class="container">
-            <a href="{{ route('home') }}">
-                <div class="logo">
+            <div class="logo">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('img/logo.svg') }}">
-                </div>
-            </a>
+                </a>
+            </div>
             <div class="row">
                 <div class="col-md-6 description">
                     <div class="title">
@@ -28,12 +28,11 @@
                     <div class="products">
                         <div class="products-wrap margin-bottom">
                             @foreach($first as $value)
-                                {{--<div class="col-md-6" style="">--}}
                                 <div class="card item">
-                                    <img class="card-img-top" src="{{ url($value->getImagePath()) }}"
+                                    <img class="card-img-top" src="{{ public_path($value->getImagePath()) }}"
                                          alt="{{ $value->name }}">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ $value->name }}</h5>
+                                        <a href="{{ route('place.show',$value->slug) }}" class="card-title">{{ $value->name }}</a>
                                         <div class="fav-block">
                                             <div class="rating-block">
                                                 <i class="fas fa-star"></i>
@@ -48,17 +47,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{--</div>--}}
                             @endforeach
                         </div>
                         <div class="arrow">
-                            <a href=""><img class="arrow-wrap" src="{{  asset('img/arrow.svg') }}" alt=""></a>
+                            <a href="{{ route('places') }}"><img class="arrow-wrap" src="{{  asset('img/arrow.svg') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="soc-icons">
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook-f"></i>facebook</a></li>
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i>google+</a></li>
+                            <li>
+                                <a href="#">
+                                    {{--
+                                        todo: Example call for create open event for DateTimePicker
+                                    --}}
+                                    <i class="fab fa-google-plus-g" @click="openPicker"></i>
+                                    google+
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

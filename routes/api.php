@@ -17,6 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+# ---------------------
+# Customers API Methods
+# ---------------------
+Route::post('create/customer', 'Api\CustomerController@createCustomer')->name('api_create_new_customer');
+
 # ------------------
 # Places API Methods
 # ------------------
