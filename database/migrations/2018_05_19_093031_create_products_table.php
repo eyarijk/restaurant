@@ -22,6 +22,8 @@ class CreateProductsTable extends Migration
             $table->integer('menu_id')->unsigned();
             $table->string('slug');
             $table->timestamps();
+
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
         });
     }
 

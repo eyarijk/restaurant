@@ -20,6 +20,8 @@ class CreateMenusTable extends Migration
             $table->text('description')->nullable();
             $table->string('slug');
             $table->timestamps();
+
+            $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
         });
     }
 

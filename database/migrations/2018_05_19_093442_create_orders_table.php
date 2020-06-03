@@ -23,6 +23,9 @@ class CreateOrdersTable extends Migration
             $table->boolean('is_finished')->default(false);
             $table->dateTime('time');
             $table->timestamps();
+
+            $table->foreign('table_id')->references('id')->on('tables')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 

@@ -16,6 +16,8 @@ class AddPlaceIdOrder extends Migration
         Schema::table('orders', function (Blueprint $table) {
             $table->integer('place_id')->unsigned();
 
+            $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
+
         });
     }
 

@@ -22,6 +22,8 @@ class CreateTablesTable extends Migration
             $table->integer('place_id')->unsigned();
             $table->boolean('is_reserved')->default(false);
             $table->timestamps();
+
+            $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
         });
     }
 
