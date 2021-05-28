@@ -80,9 +80,11 @@
     <script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
     <script>
         setTimeout(function () {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('preloader').style.display = 'none';
-            $('.blured-wrapper').attr('class', 'wrapper');
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('preloader').style.display = 'none';
+                $('.blured-wrapper').attr('class', 'wrapper');
+            })
         },
         700);
     </script>

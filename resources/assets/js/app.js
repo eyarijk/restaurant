@@ -74,9 +74,7 @@ const app = new Vue({
             this.activeStep = step;
         },
         checkStep: function (step) {
-            if (this.activeStep == step)
-                return true;
-            return false;
+            return this.activeStep === step;
         },
         formatQuery: function () {
            return '?time=' + this.formatDate() + '&person_size=' + this.person_size;
@@ -127,7 +125,7 @@ const app = new Vue({
         },
         checkTable: function () {
             this.$http.get('/api/table/' + this.table_id + this.formatQuery()).then(function(response){
-                if (response.data == true)
+                if (response.data === true)
                    this.saveOrder();
                 else
                     alert('Вибачте стіл вже зайнятий!');

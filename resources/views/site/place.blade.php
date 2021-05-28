@@ -31,7 +31,7 @@
         <div class="col-md-7">
             <div class="hero-section">
                 <div class="hero-image">
-                    <img src="{{ asset('images/places/hero_image.png') }}" alt="">
+                    <img src="{{ asset('images/place.jpeg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
                     <p>та прибувши на місце тебе буде чекати обране замовлення</p>
                 </div>
                 <div class="menu-wrap">
-                    <p>Катра коктейлів:</p>
+                    <p>Карта коктейлів:</p>
                     <ul>
                         <li><label for="opt1"><input v-model="products" type="checkbox" value="1" name="products" id="opt1">Манхеттен</label>
                         </li>

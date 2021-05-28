@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function index()
     {
         $first = Place::limit(4)->get();
-        return view('site.home',compact('first','second'));
+        return view('site.home',compact('first'));
     }
 
     public function places()
