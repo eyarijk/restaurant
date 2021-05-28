@@ -31,7 +31,7 @@
         <div class="col-md-7">
             <div class="hero-section">
                 <div class="hero-image">
-                    <img src="{{ asset('images/place.jpeg') }}" alt="">
+                    <img src="{{ url($value->getImagePath()) }}" alt="">
                 </div>
             </div>
         </div>
