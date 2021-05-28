@@ -79,14 +79,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
     <script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
     <script>
-        setTimeout(function () {
-            document.addEventListener('DOMContentLoaded', () => {
-                document.getElementById('overlay').style.display = 'none';
-                document.getElementById('preloader').style.display = 'none';
-                $('.blured-wrapper').attr('class', 'wrapper');
-            })
-        },
-        700);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('preloader').style.display = 'none';
+            $('.blured-wrapper').attr('class', 'wrapper');
+        })
     </script>
 
 
